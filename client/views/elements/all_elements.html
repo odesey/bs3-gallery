@@ -1,0 +1,29 @@
+<template name="allElements">
+  <h1>Isotope - filtering &amp; sorting</h1>
+  <h2>Filter</h2>
+  <div id="filters" class="button-group">
+    <button class="button is-checked" data-filter-value="*">show all</button>
+    <button class="button" data-filter-value=".metal">metal</button>
+    <button class="button" data-filter-value=".transition">transition</button>
+    <button class="button" data-filter-value=".alkali, .alkaline-earth">alkali and alkaline-earth</button>
+    <button class="button" data-filter-value=":not(.transition)">not transition</button>
+    <button class="button" data-filter-value=".metal:not(.transition)">metal but not transition</button>
+    <button class="button" data-filter-value="numberGreaterThan50">number > 50</button>
+    <button class="button" data-filter-value="ium">name ends with &ndash;ium</button>
+  </div>
+
+  <h2>Sort</h2>
+  <div id="sorts" class="button-group">
+    <button class="button is-checked" data-sort-value="original-order">original order</button>
+    <button class="button" data-sort-value="name">name</button>
+    <button class="button" data-sort-value="symbol">symbol</button>
+    <button class="button" data-sort-value="number">number</button>
+    <button class="button" data-sort-value="weight">weight</button>
+    <button class="button" data-sort-value="category">category</button>
+  </div>
+  <div class="isotope">
+  	{{#each elements}}
+      {{> oneElement}}
+    {{/each}}
+</div>
+</template>
